@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5433,
+            "driver": "PostgreSQL",
+            "name": "Credit Risk & Scoring Analytics",
+            "database": "Credit Risk & Scoring Analytics",
+            "username": "postgres"
+        }
+    ]
+}
