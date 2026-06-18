@@ -42,7 +42,20 @@ JOIN client_categories AS cc ON fl.customer_id = cc.customer_id
 GROUP BY cc.cat;
 ```
 ![PostgreSQL Output](SQL_files/credit_categories.png)
+
+```sql
+SELECT 
+    loan_purpose
+    , AVG(loan_amount) AS loan_per_purp
+FROM fact_loans
+WHERE loan_status = 'Default' OR days_past_due > 90
+GROUP BY loan_purpose
+HAVING AVG(loan_amount) > (SELECT AVG(loan_amount) FROM fact_loans);
+```
+![PostgreSQL Output](SQL_files/loan_purpose.png)
 </details>
+
+
 ## 📂 Quick Structure
 * `/SQL_files` — queries for data audit and segmentation.
 * `/PowerBIfiles` — interactive `.pbix` dashboard file with image.
