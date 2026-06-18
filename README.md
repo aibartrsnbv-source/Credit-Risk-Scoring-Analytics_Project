@@ -19,7 +19,7 @@ An end-to-end data analytics project simulating a banking risk-management enviro
 To ensure data integrity, metrics were extracted and verified using PostgreSQL. Below are the analytical queries and their corresponding database outputs:
 
 <details>
-<summary><b>1. Credit Scoring & Risk Segmentation (Click to expand)</b></summary>
+<summary><b> Credit Scoring & Risk Segmentation (Click to expand)</b></summary>
 
 ```sql
 WITH client_categories AS (
@@ -42,6 +42,7 @@ JOIN client_categories AS cc ON fl.customer_id = cc.customer_id
 GROUP BY cc.cat;
 ```
 ![PostgreSQL Output](SQL_files/credit_categories.png)
+
 Conclusion: The query successfully segmented the portfolio. It proved that the '3. Low' segment, despite having fewer issued loans, accumulates the highest total days past due. This matches the Power BI line-and-column chart perfectly.
 
 ```sql
@@ -54,6 +55,7 @@ GROUP BY loan_purpose
 HAVING AVG(loan_amount) > (SELECT AVG(loan_amount) FROM fact_loans);
 ```
 ![PostgreSQL Output](SQL_files/loan_purpose.png)
+
 Conclusion: Isolated the exact 'hotspots' of bad debt. The query results highlighted 'Education' and 'Personal' loans as the primary sources of unrecoverable bank capital, which matches the filtered bar chart on the dashboard.
 </details>
 
