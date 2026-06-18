@@ -8,7 +8,7 @@ An end-to-end data analytics project simulating a banking risk-management enviro
 * **Design:** Financial Dark-Mode Dashboard Optimization
 
 ## 📊 Dashboard Preview
-![Credit Risk Dashboard](dashboard_preview.png)
+![Credit Risk Dashboard](PowerBIfiles/dashboard_preview.png)
 
 ## 💡 Key Insights Discovered
 * **The Risk Paradox:** The **Low Credit Score** segment represents the lowest volume of issued loans, yet it exhibits an exponential surge in `Average Delinquency Days`.
