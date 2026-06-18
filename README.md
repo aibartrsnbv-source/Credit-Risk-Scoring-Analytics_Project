@@ -34,7 +34,8 @@ FROM fact_loans fl
 JOIN dim_customers dc ON fl.customer_id = dc.customer_id
 GROUP BY 1
 ORDER BY 1;
-
+```
+![PostgreSQL Output](PowerBIfiles/dashboard_preview.png)
 ## 📂 Quick Structure
 * `/SQL_files` — queries for data audit and segmentation.
 * `/PowerBIfiles` — interactive `.pbix` dashboard file with image.
