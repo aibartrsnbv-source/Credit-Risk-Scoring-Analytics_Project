@@ -42,6 +42,7 @@ JOIN client_categories AS cc ON fl.customer_id = cc.customer_id
 GROUP BY cc.cat;
 ```
 ![PostgreSQL Output](SQL_files/credit_categories.png)
+Conclusion: The query successfully segmented the portfolio. It proved that the '3. Low' segment, despite having fewer issued loans, accumulates the highest total days past due. This matches the Power BI line-and-column chart perfectly.
 
 ```sql
 SELECT 
@@ -53,6 +54,7 @@ GROUP BY loan_purpose
 HAVING AVG(loan_amount) > (SELECT AVG(loan_amount) FROM fact_loans);
 ```
 ![PostgreSQL Output](SQL_files/loan_purpose.png)
+Conclusion: Isolated the exact 'hotspots' of bad debt. The query results highlighted 'Education' and 'Personal' loans as the primary sources of unrecoverable bank capital, which matches the filtered bar chart on the dashboard.
 </details>
 
 
